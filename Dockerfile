@@ -11,9 +11,9 @@ ENV TZ="Asia/Shanghai"
 
 RUN set -x \
     # Downloading kubemid
-    && wget https://github.com/duoli-hub/kubemid/archive/refs/tags/"$KUBEMID_VER".tar.gz \
-    && tar zxf ./"$KUBEMID_VER".tar.gz \
-    && mv kubeasz-"$KUBEMID_VER" /etc/kubemid \
+    && wget https://github.com/duoli-hub/kubemid/archive/refs/tags/${KUBEMID_VER}.tar.gz \
+    && tar zxf ./${KUBEMID_VER}.tar.gz \
+    && mv kubeasz-${KUBEMID_VER} /etc/kubemid \
     && ln -s -f /etc/kubemid/ezctl /usr/bin/ezctl \
     && ln -s -f /etc/kubemid/ezdown /usr/bin/ezdown \
     && ln -s -f /usr/local/bin/python3.11 /usr/bin/python \
@@ -21,4 +21,4 @@ RUN set -x \
     && mkdir -p /usr/libexec \
     && ln -s /usr/bin/python3 /usr/libexec/platform-python \
     # Cleaning
-    && rm -rf ./"$KUBEMID_VER".tar.gz
+    && rm -rf ./${KUBEMID_VER}.tar.gz

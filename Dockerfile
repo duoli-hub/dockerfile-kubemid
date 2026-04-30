@@ -14,6 +14,8 @@ RUN set -x \
     && wget https://github.com/duoli-hub/kubemid/archive/refs/tags/"$KUBEMID_VER".tar.gz \
     && tar zxf ./"$KUBEMID_VER".tar.gz \
     && mv kubemid-"$KUBEMID_VER" /etc/kubemid \
+    && chmod +x /etc/kubemid/ezctl \
+    && chmod +x /etc/kubemid/ezdown \
     && ln -s -f /etc/kubemid/ezctl /usr/bin/ezctl \
     && ln -s -f /etc/kubemid/ezdown /usr/bin/ezdown \
     && ln -s -f /usr/local/bin/python3.11 /usr/bin/python \
@@ -22,3 +24,4 @@ RUN set -x \
     && ln -s /usr/bin/python3 /usr/libexec/platform-python \
     # Cleaning
     && rm -rf ./"$KUBEMID_VER".tar.gz
+#ENV PATH="/etc/kubemid:${PATH}"

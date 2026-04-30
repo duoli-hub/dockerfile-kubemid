@@ -24,4 +24,3 @@ RUN set -x \
     && ln -s /usr/bin/python3 /usr/libexec/platform-python \
     # Cleaning
     && rm -rf ./"$KUBEMID_VER".tar.gz
-#ENV PATH="/etc/kubemid:${PATH}"

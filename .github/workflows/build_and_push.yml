@@ -53,7 +53,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           build-args: |
-            KUBEMID_VERSION=${{ matrix.version }}
+            KUBEMID_VER=${{ matrix.version }}
           context: .
           tags: |
             kubemid/kubemid:${{ steps.meta.outputs.tags }}
